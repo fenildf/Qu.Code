@@ -2,11 +2,19 @@
 
 ## LintCode 
 
-题解 [github 上的答案，有pdf]
+**题解** ：[github 上的答案，有pdf]
 >
 https://github.com/soulmachine/lintcode
 
-LintCode题目【235题+别的题目】 
+
+LintCode题目【235题】 
+
+
+**特点** ：
+
+可儿检测 编码风格。提交前，检测下自己的编码风格。
+
+可以看到自己每次提交的代码。
 >
 http://www.lintcode.com 
 
@@ -19,6 +27,9 @@ http://www.lintcode.com
 
 ## LeetCode
 **题目** ：题目是不断更新的。 百度搜索 leetcode 能得到很多 不错的 信息。
+
+**特点** ：居然有排名，根据运行时间，而且对很多种语言都进行排名。这个真心赞。
+
 >
 https://leetcode.com
 
