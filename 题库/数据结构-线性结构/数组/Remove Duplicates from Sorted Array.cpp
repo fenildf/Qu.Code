@@ -1,21 +1,23 @@
 ﻿
 
-// 2.1.1 
+// __________________________26 - Remove Duplicates from Sorted Array __________________________
+/*  题目来源: 
+http://www.lintcode.com/zh-cn/problem/remove-duplicates-from-sorted-array/
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+*/ 
 
-
-
-// __________________________ Remove Duplicates from Sorted Array __________________________
-// 题目来源: http://www.lintcode.com/zh-cn/problem/remove-duplicates-from-sorted-array/
 /*
 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 
 Do not allocate extra space for another array, you must do this in place with constant memory.
 
-Example
+For example,
 
-Given input array A = [1,1,2],
+Given input array nums = [1,1,2],
 
-Your function should return length = 2, and A is now [1,2].
+Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
+
+It doesn't matter what you leave beyond the new length.【超过返回的新数组长度--不用管】
 
 */
 
@@ -50,9 +52,21 @@ public:
     }
 };
 
+// c语言版-【不用 加 对空指针的判断】
+int removeDuplicates(int* nums, int numsSize) {
+    if (numsSize == 0 || numsSize == 1)return numsSize;
+        int index = 0;
+        for (int i = 1; i < numsSize; ++i) {
+            if (nums[i] != nums[index]) {
+                nums[++index] = nums[i];
+            } 
+        }
+        return index + 1;
+}
+
 
 // 代码2
-// 时间复杂度O(n)，空间复杂度O(1)
+// 时间复杂度O(?)，空间复杂度O(?)
 class Solution {
 public:
     int removeDuplicates(vector<int> &A) {
@@ -62,18 +76,19 @@ public:
 
 
 
-// __________________________ Remove Duplicates from Sorted Array II __________________________
+// __________________________80 - Remove Duplicates from Sorted Array II __________________________
 // 题目来源: http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array-ii/
 
 /*
 Follow up for "Remove Duplicates":
 What if duplicates are allowed at most twice?
 
-Example
+For example,
+Given sorted array nums = [1,1,1,2,2,3],
 
-Given sorted array A = [1,1,1,2,2,3],
+Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. 
 
-Your function should return length = 5, and A is now [1,1,2,2,3].
+It doesn't matter what you leave beyond the new length.
 
 */
 
@@ -113,12 +128,13 @@ public:
         return index + 1;
     }
 };
+/* 代码1 的 【扩展性】不好，如果重复数允许到 3呢 */
 
 
 // 代码2
 // 时间复杂度O(n)，空间复杂度O(1)
+// 可扩展的，这样不管是要求 重复几次都没有关系了。
 
-/* 1 的 【扩展性】不好，如果重复数允许到 3呢 */
 
 class Solution {
 public:

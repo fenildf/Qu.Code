@@ -1,16 +1,12 @@
 ﻿
 
-// 2.1.1 
 
-
-
-// __________________________114 Unique Paths __________________________
+// __________________________62- Unique Paths __________________________
 /*
 题目来源:
 
-http://www.lintcode.com/en/problem/unique-paths/
 https://leetcode.com/problems/unique-paths/
-
+http://www.lintcode.com/en/problem/unique-paths/
 */  
 
 
@@ -46,7 +42,6 @@ public:
     int uniquePaths(int m, int n) {
         // wirte your code here
         if (m == 1 || n == 1) return 1;
-
         return uniquePaths(m-1, n) + uniquePaths(m, n-1);
     }
 };
@@ -71,7 +66,14 @@ public:
 };
 
 // 代码3 - 循环版本
-// 用 空间 换 时间
+/* 为了提高运行速度：
+    01-用 空间 换 时间，
+    02-用 for 循环代替 使用递归造成的 进程入栈，出栈。
+    03-加了辅助行与辅助列，在表格的最左边和最上边。【这样可以减少一个 if 判断】
+
+最后在官网上 运行时间为 0ms.   C++代码，做到了与 C代码运行的一样快欧。
+https://leetcode.com/submissions/detail/30273992/
+*/
 class Solution {
 public:
     /**
@@ -93,7 +95,7 @@ public:
     }
 };
 
-// __________________________115 Unique Paths II  __________________________
+// __________________________63 - Unique Paths II  __________________________
 // 题目来源: http://www.lintcode.com/en/problem/unique-paths-ii/
 
 /*
@@ -101,9 +103,7 @@ Follow up for "Unique Paths":
 
 Now consider if some obstacles are added to the grids. How many unique paths would there be?
 
-An obstacle and empty space is marked as 1 and 0 respectively in the grid. 【m and n will be at most 100.】
-
-Example
+An obstacle and empty space is marked as 1 and 0 respectively in the grid.
 
 For example,
 There is one obstacle in the middle of a 3x3 grid as illustrated below.
@@ -114,11 +114,13 @@ There is one obstacle in the middle of a 3x3 grid as illustrated below.
   [0,0,0]
 ]
 The total number of unique paths is 2.
+
+Note: m and n will be at most 100.
 */
 
 // __________________________ Tags __________________________
 /*
-    动态规划 , Array
+    动态规划【dynamic programming】, Array
 */
 
 
@@ -126,13 +128,14 @@ The total number of unique paths is 2.
 // __________________________ 实现细节 __________________________ 
 
 // 代码1 - for 循环版本
+// 有了  Unique Paths 1 的经验后，这里直接上 最快版本。   
 class Solution {
 public:
     /**
      * @param obstacleGrid: A list of lists of integers
      * @return: An integer
      */ 
-    long uniquePathsWithObstacles(vector<vector<int> > &obstacleGrid) {
+    long uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
         // write your code here
         int m = obstacleGrid.size();
         int n = obstacleGrid[0].size();
