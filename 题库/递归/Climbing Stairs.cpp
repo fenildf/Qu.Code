@@ -30,14 +30,15 @@ return 3
 
 // __________________________ 实现细节 __________________________ 
 
-// 代码1 - for 循环，直接超时
+// 代码1 - for 循环
 // 时间复杂度O(n),空间复杂度O(1)
 class Solution {
 public:
+
     int climbStairs(int n) {
-        // write your code here
-        int num[100]; 
-        memset(num,0,sizeof(num));
+        vector<int> num;
+        num.resize(n);
+        // 或者是： vector<int> num(n, 0);
         
         num[0] = 1;
         num[1] = 1;
@@ -48,7 +49,7 @@ public:
 };
 
 
-// 代码2 - 使用STL的动态数组
+
 
 
 

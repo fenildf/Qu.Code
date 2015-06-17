@@ -70,7 +70,17 @@ public:
 };
 
 // 代码3 - 使用STL的动态数组
+class Solution{
+public:
+    int fibonacci(int n) {
 
+        vector<int> num(n, 0);
+        num[2] = 1;
+        for (int i = 3; i < n + 1; ++i)  num[i] = num[i-1] + num[i-2];
+           
+        return num[n];
+    }
+};
 
 
 
