@@ -26,7 +26,7 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
 // __________________________ 实现细节 __________________________ 
 
 // 代码1
-// 时间复杂度O(n)
+// 时间复杂度O(n),空间复杂度O(1)
 /*
   可能会影响速度的地方：
    如果从头到尾都没有 要去除的元素，就会白白全部赋值一遍。但是好像加了 if 判断也没快。
@@ -43,8 +43,8 @@ public:
 };
 
 
-// 代码2
-// 加了 if 判断的。
+
+// 加了 if 判断的。速度都是一样的。
 class Solution {
 public:
     /** 
@@ -65,5 +65,15 @@ public:
             } 
         }
         return back;
+    }
+};
+
+
+// 代码2
+// 使用 stl 中的 remove()
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        return distance(nums.begin(), remove(nums.begin(), nums.end(), val));
     }
 };

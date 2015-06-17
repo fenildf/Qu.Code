@@ -1,0 +1,58 @@
+﻿
+
+
+// __________________________ Climbing Stairs  __________________________
+/*
+题目来源:
+http://www.lintcode.com/en/problem/climbing-stairs/
+
+*/  
+
+
+/*
+You are climbing a stair case. It takes n steps to reach to the top.
+
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+
+Example
+Given an example n=3 , 1+1+1=2+1=1+2=3
+
+return 3
+
+
+*/
+
+// __________________________ Tags __________________________
+/*
+	 Dynamic Programming-动态规划;
+*/
+
+// __________________________ 实现细节 __________________________ 
+
+// 代码1 - for 循环，直接超时
+// 时间复杂度O(n),空间复杂度O(1)
+class Solution {
+public:
+    int climbStairs(int n) {
+        // write your code here
+        int num[100]; 
+        memset(num,0,sizeof(num));
+        
+        num[0] = 1;
+        num[1] = 1;
+        for (int i = 2; i < n + 1; ++i)  num[i] = num[i-1] + num[i-2];
+           
+        return num[n];
+    }
+};
+
+
+// 代码2 - 使用STL的动态数组
+
+
+
+
+
+
+
