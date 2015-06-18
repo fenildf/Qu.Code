@@ -38,7 +38,7 @@ http://www.udpwork.com/item/13778.html
 >
 http://www.lintcode.com 
 
-**题解** ：[github 上的答案，有pdf]
+**题解** ：[github 上的答案，有pdf]【书本看到第P10页了】
 >
 https://github.com/soulmachine/lintcode
 
