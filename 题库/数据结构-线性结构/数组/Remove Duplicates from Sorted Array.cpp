@@ -44,8 +44,7 @@ public:
 
         int index = 0;
         for (int i = 1; i < size; ++i) {
-            if (nums[i] != nums[index])
-                nums[++index] = nums[i];
+            if (nums[i] != nums[index]) nums[++index] = nums[i];  
         }
         
         return index + 1;
@@ -134,8 +133,6 @@ public:
 // 代码2
 // 时间复杂度O(n)，空间复杂度O(1)
 // 可扩展的，这样不管是要求 重复几次都没有关系了。
-
-
 class Solution {
 public:
     /**

@@ -1,7 +1,9 @@
 # 说明
 
 ## LeetCode
-**题目** 
+
+**题目:** 
+
 >
 https://leetcode.com
 
@@ -13,10 +15,14 @@ https://leetcode.com
 
 **【test case】** 用来跑测试用例的数量都不一样，比 lintcode 多10倍。
 
+---
+**题解:**
 
-**题解**
- 
-[github 上的答案，有pdf]
+【酷壳陈浩的c++版】
+> 
+https://github.com/haoel/leetcode
+
+【soulmachine的150题题解，有pdf】
 >
 https://github.com/soulmachine/leetcode
 
@@ -32,13 +38,29 @@ http://www.acmerblog.com/leetcode-solutions-6422.html
 >
 http://www.udpwork.com/item/13778.html
 
+---
+**心得:**
+
+《Leetcode 编程训练》-陈皓
+>
+http://coolshell.cn/articles/12052.html
+
+## GeeksForGeeks 
+复杂数据结构的讲解及实现：
+>
+http://www.geeksforgeeks.org/
+
+## hackerrank 
+一个比较牛逼的coding challenge网站
+>
+https://www.hackerrank.com/
 
 ## LintCode 
 **题目** 
 >
 http://www.lintcode.com 
 
-**题解** ：[github 上的答案，有pdf]
+**题解** ：[github 上的答案，有pdf]【书本看到第P10页了】
 >
 https://github.com/soulmachine/lintcode
 
