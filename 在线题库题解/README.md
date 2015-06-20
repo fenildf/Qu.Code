@@ -18,6 +18,10 @@ https://leetcode.com
 ---
 **题解:**
 
+【leetcode/lintcode题解/算法学习笔记】
+>
+http://yuanbin.gitbooks.io/algorithm/content/index.html
+
 【酷壳陈浩的c++版】
 > 
 https://github.com/haoel/leetcode
