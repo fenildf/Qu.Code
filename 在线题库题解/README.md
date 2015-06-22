@@ -18,7 +18,7 @@ https://leetcode.com
 ---
 **题解:**
 
-【leetcode/lintcode题解/算法学习笔记】
+【leetcode/lintcode题解/算法学习笔记-一种在线电子书】
 >
 http://yuanbin.gitbooks.io/algorithm/content/index.html
 
