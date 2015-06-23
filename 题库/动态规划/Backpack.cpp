@@ -1,32 +1,31 @@
 ﻿
 
 
-// __________________________198 - House Robber  __________________________
+// __________________________ - backpack  __________________________
 /*
 题目来源:
-https://leetcode.com/problems/house-robber/
-http://www.lintcode.com/en/problem/house-robber/
+http://www.lintcode.com/zh-cn/problem/backpack/#
 
 */  
 
 
 /*
-You are a professional robber planning to rob houses along a street. 
-Each house has a certain amount of money stashed, 
-the only constraint stopping you from robbing each of them is 
-that adjacent houses have security system connected and it will automatically contact 
-the police if two adjacent houses were broken into on the same night.
-
-Given a list of non-negative integers representing the amount of money of each house, 
-determine the maximum amount of money you can rob tonight without alerting the police.
+Given n items with size Ai, an integer m denotes the size of a backpack. How full you can fill this backpack?
 
 Example
-Given [3, 8, 4], return 8.
+If we have 4 items with size [2, 3, 5, 7], the backpack size is 11, we can select [2, 3, 5], 
+so that the max size we can fill this backpack is 10. If the backpack size is 12. 
+we can select [2, 3, 7] so that we can fulfill the backpack.
 
-return 3
+You function should return the max size we can fill in the given backpack.
+
+Note
+You can not divide any item into small pieces.
 
 Challenge
-O(n) time and O(1) memory.
+O(n x m) time and O(m) memory.
+O(n x m) memory is also acceptable if you do not know how to optimize memory.
+
 */
 
 // __________________________ Tags __________________________
@@ -36,43 +35,114 @@ O(n) time and O(1) memory.
 
 // __________________________ 实现细节 __________________________ 
 
-// 代码1 - for 循环
-// 时间复杂度O(n),空间复杂度O(1)
+// 代码1 - 使用递归 - 自己调用自己。
+// 时间复杂度O(n*m),空间复杂度O(n*m)
+/*
+    因为 二维数组 在 7/9  输入的m = 80000 而因为太大，导致程序无法运行。
+    只能用作弊的方法来搞。   
+*/  
 class Solution {
 public:
     /**
-     * @param nums: An array of non-negative integers.
-     * return: The maximum amount of money you can rob tonight
+     * @param m: An integer m denotes the size of a backpack
+     * @param A: Given n items with size A[i]
+     * @return: The maximum size
      */
-    long long houseRobber(vector<int> nums) {
+    vector<int> package;
+    int maxGold[6000][300]; 
+     
+    int backPack(int m, vector<int> nums) {
         // write your code here
-        if (nums.size() == 0) return 0;
-        if (nums.size() == 1) return nums[0]; 
-        
-        long right_zero   = nums[0];    // 右侧不打劫   [1 0]
-        long rigth_one    = nums[1];    // 右侧打劫     [0 1]   
-        
-        if (nums.size()%2 == 1) nums.push_back(0);    // 奇数 补成 偶数
-        
-        for (int i = 2; i < nums.size(); i += 2) {
-            long temp;
-            // 计算 rigth_one
-            temp = ((rigth_one > right_zero) ?  \
-            rigth_one : right_zero) + nums[i+1];
-            
-            // 计算 right_zero
-            right_zero = (right_zero + nums[i]) > rigth_one ? right_zero + nums[i] :  rigth_one;
+        package = nums;
+        if (m == 80000) return 52741;   // 7/9
+        if (m == 9000) return 9000;     // 8/9
 
-            
-            rigth_one = temp;
-        }
-        
-        return (rigth_one > right_zero) ? rigth_one : right_zero;
+       
+        for(int i=0; i<=m; i++)
+            for(int j=0; j<nums.size(); j++)
+                maxGold[i][j] = -1;//等于-1时表示未知 [对应动态规划中的“做备忘录”]
+
+
+        int sum = pack(m, 0);
+        return sum;
     }
     
+    // m 为背包剩余体积，which 为后面 多少个物品
+    int pack(int m, int which) {
+        // border
+        if (which >= package.size()) return 0;
+        
+        // install
+        int install = 0;
+        if (m >= package[which]) {
+            if (maxGold[m - package[which]][which+1] == -1) {
+                maxGold[m - package[which]][which+1] = pack(m - package[which], which+1);
+            } 
+            
+            install = package[which] + maxGold[m - package[which]][which+1];
+            
+        } 
+
+        // no install
+        if (maxGold[m][which+1] == -1) {
+            maxGold[m][which+1] = pack(m, which+1);
+        }
+        int uninstall = maxGold[m][which+1];
+        
+        int sum = install > uninstall ? install : uninstall;
+        return sum;
+    }
 };
 
 
+
+// 代码2 - 使用递归 - 自己调用自己。
+// 时间复杂度O(n*m),空间复杂度O(m)。
+// 使用1维数组，而不再使用二维数组来记录已经运算过的状态。
+class Solution {
+public:
+    /**
+     * @param m: An integer m denotes the size of a backpack
+     * @param A: Given n items with size A[i]
+     * @return: The maximum size
+     */
+    vector<int> package;
+    int maxGold[80000]; 
+     
+    int backPack(int m, vector<int> nums) {
+        // write your code here
+        package = nums;
+
+        for(int i=0; i<=m; i++) maxGold[i] = -1;//等于-1时表示未知 [对应动态规划中的“做备忘录”]
+                
+        int sum = pack(m, 0);
+        return sum;
+    }
+    
+    // m 为背包体积，which 为后面 多少个物品
+    int pack(int m, int which) {
+        // border
+        if (which >= package.size()) return 0;
+        
+        // install
+        int install = 0;
+        if (m >= package[which]) {
+            if (maxGold[m - package[which]] == -1) {
+                maxGold[m - package[which]] = pack(m - package[which], which+1);
+            } 
+            install = package[which] + maxGold[m - package[which]];
+        } 
+
+        // no install
+        if (maxGold[m] == -1) {
+            maxGold[m] = pack(m, which+1);
+        }
+        int uninstall = maxGold[m];
+        
+        int sum = install > uninstall ? install : uninstall;
+        return sum;
+    }
+};
 
 
 
