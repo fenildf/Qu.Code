@@ -6,6 +6,7 @@
 题目来源:
 http://www.lintcode.com/zh-cn/problem/backpack/#
 
+0/1背包 问题
 */  
 
 
@@ -146,8 +147,31 @@ public:
 
 
 
-
-
+// 代码3 - 使用循环 - 
+// 时间复杂度O(n*m),空间复杂度O(m)。
+// 使用1维数组，而不再使用二维数组来记录已经运算过的状态。
+class Solution {
+public:
+    /**
+     * @param m: An integer m denotes the size of a backpack
+     * @param A: Given n items with size A[i]
+     * @return: The maximum size
+     */
+    int backPack(int m, vector<int> volume) {
+        // write your code here
+        vector<int> sum(m + 1, 0);
+        
+        for (int i = 0; i < volume.size(); ++i) {
+            for (int j = m; j >= volume[i]; --j) {
+                if (sum[j] < sum[j-volume[i]] + volume[i]) {
+                    sum[j] = sum[j-volume[i]] + volume[i];
+                }
+            }
+        }
+        
+        return sum[m];
+    }
+};
 
 
 
