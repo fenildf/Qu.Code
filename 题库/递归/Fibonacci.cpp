@@ -40,7 +40,7 @@ The Nth fibonacci number won't exceed the max value of signed 32-bit integer in 
 // __________________________ 实现细节 __________________________ 
 
 // 代码1 - 用递归，直接超时
-// 时间复杂度O(?),空间复杂度O(1)
+// 时间复杂度O(?),空间复杂度O(n)
 
 class Solution{
 public:
@@ -54,7 +54,7 @@ public:
 };
 
 // 代码2 - 用枚举
-// 时间复杂度O(n),空间复杂度O(1)
+// 时间复杂度O(n),空间复杂度O(n)
 // 这里还可以改进一下，使用STL中的动态数组。
 class Solution{
 public:
@@ -70,6 +70,7 @@ public:
 };
 
 // 代码3 - 使用STL的动态数组
+// 时间复杂度O(n),空间复杂度O(n)
 class Solution{
 public:
     int fibonacci(int n) {
@@ -83,7 +84,28 @@ public:
 };
 
 
+// 代码4 
+/*
+    考虑到 菲波拉契 数列增长的特殊性，当返回值只是最后一项时，
+    可以只用 三个临时变量 来存储就够了，而不需要一个动态数组。
+*/
+// 时间复杂度O(n),空间复杂度O(3)【即是O(1)】
+class Solution{
+public:
+    int fibonacci(int n) {
 
+        int num[3] = {0,1,0};
 
+        for (int i = 3; i < n + 1; ++i) {
+            num[2] = num[0] + num[1];
+            num[0] = num[1];
+            num[1] = num[2];
+        }  
+         
+        if (n == 1) return num[0];
+        if (n == 2) return num[1];   
+        return num[2];
+    }
+};
 
 

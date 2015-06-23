@@ -31,7 +31,7 @@ return 3
 // __________________________ 实现细节 __________________________ 
 
 // 代码1 - for 循环
-// 时间复杂度O(n),空间复杂度O(1)
+// 时间复杂度O(n),空间复杂度O(n)
 class Solution {
 public:
 
@@ -48,8 +48,24 @@ public:
     }
 };
 
+// 代码2 - for 循环
+// 时间复杂度O(n),空间复杂度O(1)
+class Solution{
+public:
+    int climbStairs(int n) {
 
+        int num[3] = {1,1,0};
 
+        for (int i = 2; i < n + 1; ++i) {
+            num[2] = num[0] + num[1];
+            num[0] = num[1];
+            num[1] = num[2];
+        }  
+         
+        if (n < 2) return num[n];  
+        return num[2];
+    }
+};
 
 
 
