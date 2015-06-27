@@ -57,37 +57,41 @@ public:
      * @param root: The root of binary tree.
      * @return: True if the binary tree is BST, or false
      */
-    bool isBST; 
+    bool isBST;
+    enum VAL{
+        VAL_MIN = 0,
+        VAL_MAX = 1,
+    };
     bool isValidBST(TreeNode *root) {
         // write your code here
         isBST = true;
-        compare(root, 0);
+        compare(root);
         return isBST;
     }
     
-    /*
-        i:  0-说明是左子树，返回左子树节点中max的值; 
-            1-说明是右子树，返回右子树节点中min的值; 
-    */ 
-    int compare(TreeNode *root,int i) {
+
+    // vector<int>:VAL_MIN-放子树中的最小值; VAL_MAX-放子树中的最大值;
+    vector<int> compare(TreeNode *root) {
         // write your code here
-        if(root == nullptr)return 0;
-        int mid = root->val;
+        if(root == nullptr)return vector<int>();
+        const int mid = root->val;
+        vector<int> ret(2,mid);
+        
         
         if (root->left != nullptr) 
         {
-            int left = compare(root->left, 0);
-            if (left >= root->val) isBST = false;
-            if (i == 1) mid = left;
+            vector<int> left = compare(root->left);
+            if (left[VAL_MAX] >= mid) isBST = false;
+            ret[VAL_MIN] = left[VAL_MIN]; 
         }
         
         if (root->right != nullptr) 
         {
-            int right = compare(root->right, 1);
-            if (right <= root->val) isBST = false;
-            if (i == 0) mid = right;
+            vector<int> right = compare(root->right);
+            if (right[VAL_MIN] <= mid) isBST = false;
+            ret[VAL_MAX] = right[VAL_MAX];
         }
             
-        return mid;
+        return ret;
     }
 };
