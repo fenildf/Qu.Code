@@ -132,5 +132,43 @@ public:
 
 
 // 代码3 - 使用迭代方法
-// 辅助空间-只用1个队列
- 
+// 辅助空间-用2个队列
+class Solution {
+    /**
+     * @param root: The root of binary tree.
+     * @return: Level order a list of lists of integer
+     */
+public:
+    vector<vector<int>> levelOrder(TreeNode *root) {
+        // write your code here
+        vector<vector<int>> matrix;
+        if (root == nullptr)return matrix;
+        
+        queue<TreeNode*> t1Q,t2Q;
+        vector<int> level;
+        
+        t1Q.push(root);
+        while(!t1Q.empty()) {
+            while(!t1Q.empty()) {
+                TreeNode *nowNode = t1Q.front();
+                t1Q.pop();
+                level.push_back(nowNode->val); 
+                
+                if (nowNode->left   != nullptr) t2Q.push(nowNode->left);
+                if (nowNode->right  != nullptr) t2Q.push(nowNode->right);
+            }
+            matrix.push_back(level);
+            level.clear();
+            
+            swap(t1Q, t2Q);         // swap() 神来之笔 啊。
+        } 
+        return matrix;
+    }
+};
+
+// 代码4 - 使用迭代方法
+// 辅助空间-用1个队列
+
+
+
+

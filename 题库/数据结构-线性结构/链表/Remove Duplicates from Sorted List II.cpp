@@ -50,46 +50,52 @@ Given 1->1->1->2->3, return 2->3.
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-        // 边界检侧
         if (head == nullptr || head->next == nullptr) {
             return head;
         }
+    
         
-        ListNode *ffNode = head;
         ListNode *foreNode = head;
-        ListNode *nowNode = head->next;
-        head = nullptr;
+        ListNode *nowNode = foreNode;
+        ListNode *nextNode = foreNode->next;
         
-        bool checkhead = false;
-        bool delFor = false;
+        ListNode *saveNode = nullptr; 
+                      head = nullptr;
         
-        while (nowNode != nullptr) {
-            if(foreNode->val == nowNode->val) {
-                delFor = true;
-                nowNode = nowNode->next;
-                foreNode->next = nowNode;
-                ffNode->next = nowNode; 
-            } else {
-                if (delFor == false) {
-                    if (checkhead == false) {
-                        checkhead = true;
+        while (nextNode != nullptr) {
+            if(nextNode->val == nowNode->val) {
+                nowNode = nextNode;
+                nextNode = nextNode->next;
+            } else if (nextNode->val != nowNode->val) {
+                
+                if (nowNode == foreNode) {
+                    if (saveNode == nullptr) {
+                        saveNode = foreNode;
                         head = foreNode;
+                    } else {
+                        saveNode->next->val = foreNode->val;
+                        saveNode = saveNode->next;
                     }
-                    
-                    ffNode = foreNode;
-                    foreNode = nowNode;
-                    nowNode = nowNode->next;
-                } else {        // 把 foreNode 删除了。
-                    delFor = false;
-                    ffNode->next = nowNode;
-                    foreNode = nowNode;
-                    nowNode = nowNode->next;
                 }
                 
+                foreNode = nextNode;
+                nowNode = nextNode;
+                nextNode = foreNode->next;
             }
+        }
+        
+        if(foreNode == nowNode && saveNode != nullptr) {
+            saveNode->next->val = foreNode->val;
+            saveNode = saveNode->next;
+        } else if (foreNode == nowNode && saveNode == nullptr) {
+            head = foreNode;
+            head->next = nullptr;
+        }
+        
+        if (saveNode != nullptr) {
+            saveNode->next = nullptr;
         }
         
         return head;
     }
 };
-
