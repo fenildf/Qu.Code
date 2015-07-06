@@ -1,4 +1,43 @@
-﻿// 所用到的数据结构 
+﻿
+
+
+// __________________________ Count of Smaller Number __________________________
+/*
+题目来源:
+http://www.lintcode.com/en/problem/count-of-smaller-number/
+
+区间求和 II
+*/  
+
+
+/*
+Medium Count of Smaller Number
+
+21% Accepted
+Give you an integer array (index from 0 to n-1, where n is the size of this array, value from 0 to 10000) and an query list. For each query, give you an integer, return the number of element in the array that are smaller that the given integer.
+
+
+Example
+For array [1,2,7,8,5], and queries [1,8,5], return [0,4,2]
+
+Note
+We suggest you finish problem Segment Tree Build and Segment Tree Query II first.
+
+Challenge
+Could you use three ways to do it.
+
+Just loop
+Sort and binary search
+Build Segment Tree and Search.
+*/
+
+// __________________________ Tags __________________________
+/*
+	 Binary Tree, Segment Tree
+*/
+
+// __________________________ 所用到的数据结构 __________________________
+// 所用到的数据结构 
 class SegmentTreeNodeWithCount {
 public:
     int start, end, min, max;
@@ -11,6 +50,9 @@ public:
     }
 };
 
+// __________________________ 实现细节 __________________________ 
+// 代码1 - 
+// 前面14个用例都通过了，后面一个大数据 直接超时...
 class Solution {
 public:
    /**
@@ -37,24 +79,15 @@ public:
         return queryResult;
     }
     
-    // 线段树的值查询  - 【区间最小值】
+    // 线段树的值查询  - 【区间中 比 limit 小的值】
     int query(SegmentTreeNodeWithCount *root, int limit) {
         // write your code here
+        if (root == nullptr || limit <= root->min) return 0; 
+        if (limit > root->max) return root->end - root->start + 1; 
         
-        if(limit == root->start && limit == root->end) return root->max;
-        
-        int leftEnd = (root->start + root->end) / 2 ;
-        int rightStart = (root->start + root->end) / 2 + 1;
-        
-        int retLeaf = 0;
-        if (limit <= leftEnd) retLeaf = query(root->left, limit, limit);
-        
-        if (limit >= rightStart) retLeaf = query(root->right, limit, limit);
-        
-        if (limit < rightStart && end > leftEnd) {
-            retLeaf = min(query(root->left, limit, leftEnd), query(root->right, rightStart, limit));
-        }
-        
+         
+        int retLeaf = query(root->left, limit) + query(root->right, limit);
+ 
         return retLeaf;
     }
     
@@ -63,6 +96,7 @@ public:
     // 0-最小值，1-最大值。
     void modify(SegmentTreeNodeWithCount *root, int index, int value) {
         // write your code here
+        if(root == nullptr) return;
         
         // 走到叶子节点。 
         if(index == root->start && index == root->end) {
