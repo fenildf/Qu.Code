@@ -83,8 +83,8 @@ public:
         
         if(start == root->start && end == root->end) return root->max;
         
-        int leftEnd = (root->start + root->end) / 2 ;
-        int rightStart = (root->start + root->end) / 2 + 1;
+        int leftEnd = root->left->end;
+        int rightStart = root->right->start;
         
         int maxret = 0;
         if (end <= leftEnd) maxret = query(root->left, start, end);

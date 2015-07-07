@@ -86,16 +86,11 @@ public:
             return root->max;
         }
         
-        int leftEnd = (root->start + root->end) / 2 ;
-        int rightStart = (root->start + root->end) / 2 + 1;
-        
         int retLeft,retRight;
-        if (index <= leftEnd) {
+        if (index <= root->left->end) {
             retLeft = modify(root->left, index, value);
             retRight = root->right->max;
-        }
-        
-        if (index >= rightStart) {
+        } else {
             retRight = modify(root->right, index, value);
             retLeft = root->left->max;
         }

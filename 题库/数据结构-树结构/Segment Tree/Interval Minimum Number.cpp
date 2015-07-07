@@ -84,6 +84,12 @@ public:
     // 线段树的值查询  - 【区间最小值】
     int query(SegmentTreeNodeWithCount *root, int start, int end) {
         // write your code here
+        // 越界判断
+        if(root == nullptr || start > root->end || end < root->start) return 0;     // 优先判断 root 是否为 nullptr
+        
+        // 查询范围越界，重定查询范围。
+        if(start < root->start) start = root->start;
+        if(end > root->end) end = root->end;
         
         if(start == root->start && end == root->end) return root->count;
         
@@ -113,16 +119,11 @@ public:
             return root->count;
         }
         
-        int leftEnd = (root->start + root->end) / 2 ;
-        int rightStart = (root->start + root->end) / 2 + 1;
-        
         int retLeft,retRight;
-        if (index <= leftEnd) {
+        if (index <= root->left->end) {
             retLeft = modify(root->left, index, value);
             retRight = root->right->count;
-        }
-        
-        if (index >= rightStart) {
+        } else {
             retRight = modify(root->right, index, value);
             retLeft = root->left->count;
         }

@@ -81,7 +81,7 @@ public:
      */
     SegmentTreeNode * build(int start, int end) {
         // write your code here
-        if(start > end) return (SegmentTreeNode *)nullptr;    // 排序树，start <= end
+        if (start > end) return (SegmentTreeNode *)nullptr;    // 排序树，start <= end
         
         SegmentTreeNode *  newNode  = new SegmentTreeNode(start, end);
         if (start == end) return newNode;
