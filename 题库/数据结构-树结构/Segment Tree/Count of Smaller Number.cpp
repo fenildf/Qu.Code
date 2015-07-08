@@ -51,8 +51,11 @@ public:
 };
 
 // __________________________ 实现细节 __________________________ 
-// 代码1 - 
+// 代码1 - 使用线段树，没有 排序
 // 前面14个用例都通过了，后面一个大数据 直接超时...
+// 与代码2 相比就差个 第1行的代码。
+
+// 代码2 - 使用线段树，加了一行 排序 在 构建线段树前，这样查询时就会非常高效了，时间没有超值。
 class Solution {
 public:
    /**
@@ -62,6 +65,8 @@ public:
      */
     vector<int> countOfSmallerNumber(vector<int> &nums, vector<int> &queries) {
         // write your code here
+        sort(nums.begin(), nums.end());     // 排序
+
         // 构造线段树
         SegmentTreeNodeWithCount * root = build(0, nums.size()-1);
         
