@@ -44,7 +44,7 @@ Special thanks to @mithmatt for adding this problem and creating all test cases.
 
 // __________________________ 实现细节 __________________________ 
 // 代码1 - 递归解决
-// 时间复杂度O(n),空间复杂度O(n)
+// 时间复杂度O(n),空间复杂度O(n) 
 class Solution {
 public:
      enum {
