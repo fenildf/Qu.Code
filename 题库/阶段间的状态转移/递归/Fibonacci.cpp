@@ -53,7 +53,30 @@ public:
     }
 };
 
-// 代码2 - 用枚举
+// 代码2 -【尾递归】
+// 详细讲解 尾递归的 文章：http://lixinzhang.github.io/fei-bo-na-qi-shu-lie-ji-wei-di-gui.html
+// 不会有重复计算的事情发生。这样就保证了时间至少不会超时。
+// 空间复杂读： 占用常量栈空间 
+class Solution{
+public:
+    int fibonacci(int n) {
+
+        if (n == 1) return 0;
+        if (n == 2) return 1;
+        
+        return fibonacciThree(0, 1, n-2);
+    }
+    
+    int fibonacciThree(int a1, int a2, int n) {  
+        if(n == 1) {
+            return a2;  
+        } else {
+            return fibonacciThree(a2, a1 + a2, n-1);
+        }
+    }
+};
+
+// 代码3 - 用枚举
 // 时间复杂度O(n),空间复杂度O(n)
 // 这里还可以改进一下，使用STL中的动态数组。
 class Solution{
@@ -69,7 +92,7 @@ public:
     }
 };
 
-// 代码3 - 使用STL的动态数组
+// 代码4 - 使用STL的动态数组
 // 时间复杂度O(n),空间复杂度O(n)
 class Solution{
 public:
@@ -84,7 +107,7 @@ public:
 };
 
 
-// 代码4 
+// 代码5 
 /*
     考虑到 菲波拉契 数列增长的特殊性，当返回值只是最后一项时，
     可以只用 三个临时变量 来存储就够了，而不需要一个动态数组。
@@ -109,5 +132,5 @@ public:
 };
 
 
-// 代码5 -用矩阵来求 
+// 代码6 -用矩阵来求 
 // 时间复杂度O(log(n)),空间复杂度O(?)
