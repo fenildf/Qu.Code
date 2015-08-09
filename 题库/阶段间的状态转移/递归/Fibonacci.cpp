@@ -39,8 +39,8 @@ The Nth fibonacci number won't exceed the max value of signed 32-bit integer in 
 
 // __________________________ 实现细节 __________________________ 
 
-// 代码1 - 用递归，直接超时
-// 时间复杂度O(?),空间复杂度O(n)
+// 代码1 - 用递归，直接超时【树形递归】
+// 时间复杂度O(1.618^n),空间复杂度O(n)
 
 class Solution{
 public:
