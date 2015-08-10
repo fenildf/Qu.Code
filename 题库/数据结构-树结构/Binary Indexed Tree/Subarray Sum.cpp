@@ -58,3 +58,74 @@ public:
 
 // 代码2 - 使用树状数组
 // 时间复杂度O()
+class Solution {
+public:
+    /**
+     * @param nums: A list of integers
+     * @return: A list of integers includes the index of the first number 
+     *          and the index of the last number
+     */
+    vector<int> treeNum;
+     
+    vector<int> subarraySum(vector<int> nums){
+        // write your code here
+        
+        // 树状数组--实现公式
+        buildTreeNum(nums);
+        
+        for (int i = 0; i < nums.size(); ++i) {
+            int sum = 0;
+            for (int j = i; j < nums.size(); ++j) {
+                sum = getSegmentSum(i+1, j+1);
+                
+                if (sum == 0){
+                    vector<int> re = {i, j};
+                    return re;
+                }
+            }
+        }
+        
+    }
+    
+    int lowBit(int i)   // 将i中最后的1分离出来
+    {  
+        return i & (i ^ (i - 1));  
+    }
+    
+    // 生成树状数组
+    void buildTreeNum(vector<int> & nums) {
+        treeNum.push_back(0);   // 树状数组从1开始，所以先压入一个值
+        int sum = 0;
+        for (int i = 1; (i - 1) < nums.size(); ++i) {
+            sum = nums[i-1];
+            for (int j = i - 1; j > i - lowBit(i); j -= lowBit(j)) {
+                sum += treeNum[j];
+            }
+            treeNum.push_back(sum); 
+        }
+    }
+    
+    // 求1~X的和
+    int getSum(int x) {  
+        int sum = 0;  
+        while(x){  
+            sum += treeNum[x];  
+            x -= lowBit(x);  
+        }  
+        return sum;  
+    }
+    
+    // 求 i~j之间的和 [i 可以等于 j]
+    int getSegmentSum(int i, int j) {
+        int s1;
+        if (i > 1) {
+            s1 = getSum(i-1);
+        } else if (i == 1) {
+            s1 = 0;
+        }
+        
+        int s2 = getSum(j);
+        
+        return s2 - s1;
+    }
+};
