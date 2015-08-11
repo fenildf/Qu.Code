@@ -7,7 +7,7 @@
 http://www.lintcode.com/en/problem/minimum-subarray/
 
 最小子数组
-*/  
+*/   
 
 
 /*
