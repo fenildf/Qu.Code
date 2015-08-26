@@ -8,6 +8,18 @@
 
 >http://www.iteblog.com/archives/148
 
+>**bitmap与位排序法**
+>http://blog.sina.com.cn/s/blog_64a0208701011asp.html
+
+>【算法设计-散列表】散列表的直接定址法与位向量
+>http://www.aliog.com/3041.html
+
+>大数据处理算法一：BITMAP算法
+>http://www.cnphp6.com/archives/85585
+
+>**Bit-map法处理大数据问题** 【这篇文章还可以进行深入挖掘】
+>http://www.cnblogs.com/webary/p/4733247.html
+
 参考资料:  
 （1）     《C实现bitmap位图》：
 http://blog.csdn.net/QIBAOYUAN/archive/2010/09/29/5914662.aspx  

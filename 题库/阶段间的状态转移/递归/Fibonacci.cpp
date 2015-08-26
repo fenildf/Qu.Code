@@ -134,3 +134,6 @@ public:
 
 // 代码6 -用矩阵来求 
 // 时间复杂度O(log(n)),空间复杂度O(?)
+
+// 看完这个就会用矩阵玩了。
+// http://www.cnblogs.com/flyinghearts/archive/2012/02/28/2372530.html
