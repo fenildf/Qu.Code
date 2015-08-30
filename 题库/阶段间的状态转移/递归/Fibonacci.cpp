@@ -132,7 +132,7 @@ public:
 };
 
 // 代码6 - 公式实现 - 基于通项公式的快速算法【黄金分割率法】
-// 时间复杂度O(1),空间复杂度O(1)
+// 时间复杂度O(logn),空间复杂度O(1)  -   因为用了【幂运算】
 /*
     Fibonacci数列通项公式推导  http://blog.163.com/zhuxun2@126/blog/static/3631555720071024105814506/
     由于double类型的精度还不够，所以程序算出来的结果会有误差，如果把公式展开计算，得出的结果就是正确的。
@@ -246,11 +246,31 @@ public:
 原网址：http://www.cppblog.com/flyinghearts/archive/2010/07/16/118593.html
 */
 
+ll remainder = 10000;
+
+void mul(ll c[2][2], ll a[2][2], ll b[2][2]){
+    ll t[4];
+    t[0] = a[0][0]*b[0][0] + a[0][1]*b[1][0];
+    t[1] = a[0][0]*b[0][1] + a[0][1]*b[1][1];
+    t[2] = a[1][0]*b[0][0] + a[1][1]*b[1][0];
+    t[3] = a[1][0]*b[0][1] + a[1][1]*b[1][1];
+    c[0][0] = t[0] % remainder;
+    c[0][1] = t[1] % remainder;
+    c[1][0] = t[2] % remainder;
+    c[1][1] = t[3] % remainder;
+}
+
 
 /*
-延伸题目 3
-求解F[n]对某个素数的余数，比如
+延伸题目 3 - 求解F[n]对某个素数的余数
+*/
+/*          斐波那契数列的第N项
+斐波那契数列的定义如下：
+F(0) = 0
+F(1) = 1
+F(n) = F(n - 1) + F(n - 2) (n >= 2)
 
+给出n，求F(n)，由于结果很大，输出F(n) % 1000000009的结果即可。
 Input
 输入1个数n(1 <= n <= 10^18)。
 Output
@@ -258,6 +278,61 @@ Output
 
 原题目网址：http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1242
 */
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+typedef long long ll;
+
+ll remainder = 1000000009;
+
+void mul(ll c[2][2], ll a[2][2], ll b[2][2]){
+    ll t[4];
+    t[0] = a[0][0]*b[0][0] + a[0][1]*b[1][0];
+    t[1] = a[0][0]*b[0][1] + a[0][1]*b[1][1];
+    t[2] = a[1][0]*b[0][0] + a[1][1]*b[1][0];
+    t[3] = a[1][0]*b[0][1] + a[1][1]*b[1][1];
+    c[0][0] = t[0] % remainder;
+    c[0][1] = t[1] % remainder;
+    c[1][0] = t[2] % remainder;
+    c[1][1] = t[3] % remainder;
+}
+
+void pow(ll s[2][2], ll a[2][2], ll n){
+    while(n > 0){
+        if(n&1) mul(s, s, a);
+        mul(a, a, a);
+        n >>= 1;            // 这里就是 时间复杂度 为啥为 O(log(n)) 的关键。
+    }
+}
+
+long long fibonacci(long long n) {
+
+    if(n < 1) return -1;
+    if(n == 1 || n == 2) return 1;
+
+    ll a[2][2] = { {1, 1}, {1, 0} };
+    ll s[2][2] = { {1, 0}, {0, 1} };
+    pow(s, a, n-2);
+    return s[0][0] + s[0][1];
+    
+}
+
+int main() {
+  int num1, num2;
+  long long sum;
+  cin>>num1;
+  
+  sum = fibonacci(num1);
+  //sum %=1000000009;  
+  cout<<sum;
+  return 0;
+}
+
+
+
 
 
 // 把所有的 延伸题 都收集起来了，真心变态啊。
