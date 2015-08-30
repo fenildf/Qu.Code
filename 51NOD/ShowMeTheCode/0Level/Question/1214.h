@@ -20,7 +20,7 @@ Input
 Output
 输出F(n) % 1000000009的结果。
 
-原题目网址：http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1242
+题目网址：http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1242
 */
 
 typedef long long ll;

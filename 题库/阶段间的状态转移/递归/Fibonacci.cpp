@@ -152,14 +152,63 @@ public:
 // 时间复杂度O(log(n)),空间复杂度O(?)
 // 对与求 输入1个数n(1 <= n <= 10^18)。 返回f(n)的题目，并且限时 1000ms 就必须上 矩阵法来求解了。
 
-/*  参考文章
+/*  参考文章如下：
     http://www.zhihu.com/question/22854639
     Fibonacci数计算中的两个思维盲点及其扩展数列的通用高效解法：
     http://www.cnblogs.com/flyinghearts/archive/2012/02/28/2372530.html
     http://www.hawstein.com/posts/8.1.html
     http://www.gocalf.com/blog/calc-fibonacci.html
-
 */
+
+/*
+    要能实现 代码7 矩阵求斐波那契数列，必须得掌握以下 5个知识点。
+
+    如何求一个整数的幂。
+    如何快速求一个整数的幂。【log(n)】 // http://www.hawstein.com/posts/8.1.html
+    2个矩阵是如何相乘的。
+    如何快速求1个矩阵的幂。
+    最后：斐波那契数列 是 如何与矩阵连接起来的。也就是如何推导出这个公式来的。  // http://www.gocalf.com/blog/calc-fibonacci.html
+*/    
+class Solution{
+public:
+    
+typedef long long ll;    
+
+    // 矩阵乘法
+    void mul(ll s[2][2], ll a[2][2], ll b[2][2]) {
+        ll t[4];
+        t[0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        t[1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        t[2] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        t[3] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+        s[0][0] = t[0];
+        s[0][1] = t[1];
+        s[1][0] = t[2];
+        s[1][1] = t[3];
+    }
+    
+    // 矩阵快速幂
+    void powerQuick(ll s[2][2], ll a[2][2], int n) {
+        while (n > 0) {
+            if (n & 1) mul(s, s, a);
+            mul(a, a, a);
+            n = n >> 1;
+        }
+    }
+
+    int fibonacci(int n) {
+        --n;
+        if (n == 0) return 0;
+        if (n == 1 || n == 2) return 1;
+        
+        ll a[2][2] = {{1, 1}, {1, 0}};
+        ll s[2][2] = {{1, 0}, {0, 1}};
+        powerQuick(s, a, n-2);
+        int sum = s[0][0] + s[0][1];
+        return sum;
+    }
+    
+};
 
 
 
@@ -278,6 +327,13 @@ Output
 
 原题目网址：http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1242
 */
+
+/*
+    可以如下这样写：主要还是因为 取模运算 具有如下分配率。【除法例外】
+    (a×b) mod c=(a mod c * b mod c) mod c
+    (a+b) mod c=(a mod c+ b mod c) mod c
+    (a-b) mod c=(a mod c- b mod c) mod c
+*/
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -288,6 +344,7 @@ typedef long long ll;
 
 ll remainder = 1000000009;
 
+// 矩阵乘法：https://zh.wikipedia.org/wiki/%E7%9F%A9%E9%99%A3%E4%B9%98%E6%B3%95
 void mul(ll c[2][2], ll a[2][2], ll b[2][2]){
     ll t[4];
     t[0] = a[0][0]*b[0][0] + a[0][1]*b[1][0];
@@ -300,8 +357,13 @@ void mul(ll c[2][2], ll a[2][2], ll b[2][2]){
     c[1][1] = t[3] % remainder;
 }
 
-void pow(ll s[2][2], ll a[2][2], ll n){
-    while(n > 0){
+
+/*
+    下面这个公式如何推出来的，可以先理解 快速求整数幂【时间复杂度为 log(n)】，看如下帖子：
+    http://www.hawstein.com/posts/8.1.html
+*/ 
+void pow(ll s[2][2], ll a[2][2], ll n) {
+    while(n > 0) {
         if(n&1) mul(s, s, a);
         mul(a, a, a);
         n >>= 1;            // 这里就是 时间复杂度 为啥为 O(log(n)) 的关键。
@@ -317,7 +379,6 @@ long long fibonacci(long long n) {
     ll s[2][2] = { {1, 0}, {0, 1} };
     pow(s, a, n-2);
     return s[0][0] + s[0][1];
-    
 }
 
 int main() {
