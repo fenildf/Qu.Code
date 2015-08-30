@@ -150,6 +150,7 @@ public:
 
 // 代码7 - 用矩阵来求 - 【待自己实现一遍】
 // 时间复杂度O(log(n)),空间复杂度O(?)
+// 对与求 输入1个数n(1 <= n <= 10^18)。 返回f(n)的题目，并且限时 1000ms 就必须上 矩阵法来求解了。
 
 /*  参考文章
     http://www.zhihu.com/question/22854639
@@ -244,3 +245,23 @@ public:
 
 原网址：http://www.cppblog.com/flyinghearts/archive/2010/07/16/118593.html
 */
+
+
+/*
+延伸题目 3
+求解F[n]对某个素数的余数，比如
+
+Input
+输入1个数n(1 <= n <= 10^18)。
+Output
+输出F(n) % 1000000009的结果。
+
+原题目网址：http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1242
+*/
+
+
+// 把所有的 延伸题 都收集起来了，真心变态啊。
+// http://www.cnblogs.com/Knuth/archive/2009/09/04/1559951.html
+
+
+
