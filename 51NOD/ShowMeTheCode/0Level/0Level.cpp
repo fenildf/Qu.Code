@@ -2,22 +2,14 @@
 //
 
 #include "stdafx.h"
-#include "Question/1214.h"
+//#include "Question/1214.h"
+#include "Question/1137.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	long long n;
-	long long sum;
-	n = 10000000;
+	//main_1214_Test();
 
-	int i = n - 10;
-	while (i <= n)
-	{
-		sum = fibonacci(i);
-		sum %= remainder;  
-		cout << sum << "%n";
-		++i;
-	}
+	main_1137_AC();
 	
 	getchar();		// ·ÀÖ¹ ´°¿ÚÉÁµô
 

@@ -47,7 +47,7 @@ void pow(ll s[2][2], ll a[2][2], ll n){
 }
 
 ll fibonacci(ll  n) {
-	if(n < 1) return -1;
+	if(n == 0) return 0;
 	if(n == 1 || n == 2) return 1;
 
 	ll a[2][2] = { {1, 1}, {1, 0} };
@@ -56,7 +56,7 @@ ll fibonacci(ll  n) {
 	return s[0][0] + s[0][1];
 }
 
-int mainTest() {
+int main_1214_AC() {		// 通过AC测试的 main() 函数
 	long long n;
 	long long sum;
 	cin>>n;
@@ -64,6 +64,34 @@ int mainTest() {
 	sum = fibonacci(n);
 	sum %=remainder;  
 	cout<<sum;
+	return 0;
+}
+
+int main_1214_Test() {
+
+	long long n;
+	long long sum;
+
+#if 0
+	n = 5024295251;
+	long long i = n;
+	while (i <= n)
+	{
+		sum = fibonacci(i);
+		sum %= remainder;  
+		cout << sum << "%n";
+		++i;
+	}
+#else
+	while (1) {
+		cin >> n;
+		sum = fibonacci(n);
+		sum %= remainder;  
+		cout << "f(" << n << ") = "<< sum << endl ;			// f(n) = sum
+	}
+	
+
+#endif
 	return 0;
 }
 

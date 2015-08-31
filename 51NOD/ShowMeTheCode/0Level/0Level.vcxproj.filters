@@ -27,6 +27,9 @@
     <ClInclude Include="Question\1214.h">
       <Filter>Question</Filter>
     </ClInclude>
+    <ClInclude Include="Question\1137.h">
+      <Filter>Question</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
