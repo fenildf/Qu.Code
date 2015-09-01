@@ -148,7 +148,7 @@ public:
     }
 };
 
-// 代码7 - 用矩阵来求 - 【待自己实现一遍】
+// 代码7 - 用矩阵来求 - 
 // 时间复杂度O(log(n)),空间复杂度O(?)
 // 对与求 输入1个数n(1 <= n <= 10^18)。 返回f(n)的题目，并且限时 1000ms 就必须上 矩阵法来求解了。
 
@@ -190,7 +190,7 @@ typedef long long ll;
     // 矩阵快速幂
     void powerQuick(ll s[2][2], ll a[2][2], int n) {
         while (n > 0) {
-            if (n & 1) mul(s, s, a);
+            if (n & 1) mul(s, a, s);
             mul(a, a, a);
             n = n >> 1;
         }
@@ -206,9 +206,33 @@ typedef long long ll;
         powerQuick(s, a, n-2);
         int sum = s[0][0] + s[0][1];
         return sum;
-    }
-    
+    } 
 };
+
+// 代码 8 ： 比 矩阵求解 还快的方法 ！！！【疯了吧】   逆元？ 二次剩余？ 这都是啥子东西？
+// 其实就是 代码6 的 精确求解版本。
+/*  知乎对话：
+    http://www.zhihu.com/question/23582123/answer/40464211
+
+    求余数的话快速幂并不是最快的。给定M的时候快速幂是O(log n)，找循环节是O(1)
+    对，但是不通用。快速幂速度基本上肯定够，而且好写。
+*/ 
+/*
+    参考文章:
+    http://blog.csdn.net/acdreamers/article/details/23039571
+    http://zhuanlan.zhihu.com/litaoye/19768646#comment-92558666
+    [论文] http://math.arizona.edu/~ura-reports/071/Campbell.Charles/Final.pdf
+
+
+    扩展阅读文章：
+    fibonacci数列为什么那么重要，所有关于数学的书几乎都会提到？
+    http://www.zhihu.com/question/28062458/answer/39763094
+
+    斐波那契数列当n很大时如何高效的求借第n项a(n) mod M的值?
+    http://www.zhihu.com/question/23582123/answer/40464211
+    
+*/
+
 
 
 
@@ -328,11 +352,15 @@ Output
 原题目网址：http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1242
 */
 
-/*
-    可以如下这样写：主要还是因为 取模运算 具有如下分配率。【除法例外】
+/*  
+    可以如下这样写：主要还是因为 取余运算 具有如下分配表：
+    (a+b) % c=(a % c+ b % c) % c
+
+
+    取模运算 具有如下分配率。【除法例外】
     (a×b) mod c=(a mod c * b mod c) mod c
     (a+b) mod c=(a mod c+ b mod c) mod c
-    (a-b) mod c=(a mod c- b mod c) mod c
+    (a-b) mod c=(a mod c- b mod c) mod c    
 */
 #include <cmath>
 #include <cstdio>
@@ -360,11 +388,12 @@ void mul(ll c[2][2], ll a[2][2], ll b[2][2]){
 
 /*
     下面这个公式如何推出来的，可以先理解 快速求整数幂【时间复杂度为 log(n)】，看如下帖子：
-    http://www.hawstein.com/posts/8.1.html
+    http://www.hawstein.com/posts/8.1.html      
+    [这篇文章里面，代码有一个地方错误了，矩阵乘法 是不满足交换律的，文章里面 用成：if(n&1) mul(s, s, a)了，与推导出的公式矛盾]
 */ 
 void pow(ll s[2][2], ll a[2][2], ll n) {
     while(n > 0) {
-        if(n&1) mul(s, s, a);
+        if(n&1) mul(s, a, s);
         mul(a, a, a);
         n >>= 1;            // 这里就是 时间复杂度 为啥为 O(log(n)) 的关键。
     }

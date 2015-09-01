@@ -24,7 +24,7 @@ Output
 */
 
 typedef long long ll;
-const ll remainder = 1000000009;
+const ll m_remainder = 1000000009;
 
 void mul(ll c[2][2], ll a[2][2], ll b[2][2]){
 	ll t[4];
@@ -32,10 +32,10 @@ void mul(ll c[2][2], ll a[2][2], ll b[2][2]){
 	t[1] = a[0][0]*b[0][1] + a[0][1]*b[1][1];
 	t[2] = a[1][0]*b[0][0] + a[1][1]*b[1][0];
 	t[3] = a[1][0]*b[0][1] + a[1][1]*b[1][1];
-	c[0][0] = t[0] % remainder;
-	c[0][1] = t[1] % remainder;
-	c[1][0] = t[2] % remainder;
-	c[1][1] = t[3] % remainder;
+	c[0][0] = t[0] % m_remainder;
+	c[0][1] = t[1] % m_remainder;
+	c[1][0] = t[2] % m_remainder;
+	c[1][1] = t[3] % m_remainder;
 }
 
 void pow(ll s[2][2], ll a[2][2], ll n){
@@ -56,18 +56,18 @@ ll fibonacci(ll  n) {
 	return s[0][0] + s[0][1];
 }
 
-int main_1214_AC() {		// 通过AC测试的 main() 函数
+int main_1214_AC() {		// 用来通过AC测试的 main() 函数
 	long long n;
 	long long sum;
 	cin>>n;
 
 	sum = fibonacci(n);
-	sum %=remainder;  
+	sum %=m_remainder;  
 	cout<<sum;
 	return 0;
 }
 
-int main_1214_Test() {
+int main_1214_Test() {		// 用来输出测试的 函数。
 
 	long long n;
 	long long sum;
@@ -86,7 +86,7 @@ int main_1214_Test() {
 	while (1) {
 		cin >> n;
 		sum = fibonacci(n);
-		sum %= remainder;  
+		sum %= m_remainder;  
 		cout << "f(" << n << ") = "<< sum << endl ;			// f(n) = sum
 	}
 	
