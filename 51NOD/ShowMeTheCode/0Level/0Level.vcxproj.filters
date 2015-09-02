@@ -34,6 +34,9 @@
     <ClInclude Include="Question\1046_A^B Mod C.h">
       <Filter>Question</Filter>
     </ClInclude>
+    <ClInclude Include="Question\testleetcode.h">
+      <Filter>Question</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

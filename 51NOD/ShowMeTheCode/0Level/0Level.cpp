@@ -13,12 +13,12 @@
 #endif
 
 
-#include "1046_A^B Mod C.h"
+#include "testleetcode.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//main_AC();
-	main_Test();
+	unsigned int j = reverseBits(2);
 	//main_1137_AC();
 
 	//main_1126_AC();

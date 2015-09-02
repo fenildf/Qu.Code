@@ -4,9 +4,9 @@
 // __________________________ Count 1 in Binary __________________________
 /*
 题目来源:
-
 http://www.lintcode.com/en/problem/count-1-in-binary/
 
+https://leetcode.com/problems/number-of-1-bits/
 */  
 
 
