@@ -8,33 +8,27 @@
     <Filter Include="Question">
       <UniqueIdentifier>{06ea7d47-d1c9-400d-92af-bdbf7871c270}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Question\话题-">
-      <UniqueIdentifier>{ccde2c62-f34f-4d5d-ab31-86e272b46d6e}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Question\1137.h">
-      <Filter>Question</Filter>
-    </ClInclude>
-    <ClInclude Include="Question\1126.h">
-      <Filter>Question</Filter>
-    </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="Question\1214_斐波那契数列的第N项.h">
+    <ClInclude Include="..\Question\1031_骨牌覆盖.h">
       <Filter>Question</Filter>
     </ClInclude>
-    <ClInclude Include="Question\1031_骨牌覆盖.h">
+    <ClInclude Include="..\Question\1046_A^B Mod C.h">
       <Filter>Question</Filter>
     </ClInclude>
-    <ClInclude Include="Question\1046_A^B Mod C.h">
+    <ClInclude Include="..\Question\1126.h">
       <Filter>Question</Filter>
     </ClInclude>
-    <ClInclude Include="Question\testleetcode.h">
+    <ClInclude Include="..\Question\1137.h">
+      <Filter>Question</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\1214_斐波那契数列的第N项.h">
       <Filter>Question</Filter>
     </ClInclude>
   </ItemGroup>
@@ -42,7 +36,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="0Level.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
   </ItemGroup>
