@@ -31,6 +31,9 @@
     <ClInclude Include="..\Question\1214_斐波那契数列的第N项.h">
       <Filter>Question</Filter>
     </ClInclude>
+    <ClInclude Include="..\Question\1087_1101001000.h">
+      <Filter>Question</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

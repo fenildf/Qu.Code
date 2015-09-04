@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="..\Question\1031_骨牌覆盖.h" />
     <ClInclude Include="..\Question\1046_A^B Mod C.h" />
+    <ClInclude Include="..\Question\1087_1101001000.h" />
     <ClInclude Include="..\Question\1126.h" />
     <ClInclude Include="..\Question\1137.h" />
     <ClInclude Include="..\Question\1214_斐波那契数列的第N项.h" />

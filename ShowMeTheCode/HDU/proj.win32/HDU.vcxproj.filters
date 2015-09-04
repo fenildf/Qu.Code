@@ -25,5 +25,11 @@
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
+    <ClCompile Include="..\Question\1000 A+B Problem.cpp">
+      <Filter>Question</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Question\1090 A+B for Input-Output Practice (II).cpp">
+      <Filter>Question</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
