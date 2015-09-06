@@ -16,10 +16,13 @@
     <ClInclude Include="stdafx.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\Reverse Bits.h">
+    <ClInclude Include="..\Question\172_Factorial Trailing Zeroes.h">
       <Filter>Question</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\Two Sum.h">
+    <ClInclude Include="..\Question\190_Reverse Bits.h">
+      <Filter>Question</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\002_Two Sum.h">
       <Filter>Question</Filter>
     </ClInclude>
   </ItemGroup>

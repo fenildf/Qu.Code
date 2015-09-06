@@ -79,8 +79,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Question\Reverse Bits.h" />
-    <ClInclude Include="..\Question\Two Sum.h" />
+    <ClInclude Include="..\Question\172_Factorial Trailing Zeroes.h" />
+    <ClInclude Include="..\Question\190_Reverse Bits.h" />
+    <ClInclude Include="..\Question\002_Two Sum.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

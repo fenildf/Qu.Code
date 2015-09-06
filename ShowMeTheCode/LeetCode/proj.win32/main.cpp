@@ -3,13 +3,14 @@
 // AC 了的题目
 #if 0		
 
-#include "Reverse Bits.h"
-#include "Two Sum.h"
+#include "002_Two Sum.h"
+#include "172_Factorial Trailing Zeroes.h"
+#include "190_Reverse Bits.h"
 
 #endif
 
 
-#include "Two Sum.h"
+#include "172_Factorial Trailing Zeroes.h"
 
 
 int _tmain(int argc, _TCHAR* argv[])
