@@ -15,7 +15,7 @@
 	http://acm.sgu.ru/
 
 	Codeforces-不断维护历届题库						
-	http://codeforces.com
+	http://codeforces.com 
 
 	首先，要向读者介绍的是历史最悠久，最著名的OJ-西班牙Valladolid大学的【UVaOJ】
 	http://uva.onlinejudge.org/			【被墙了，MD，而本书每章后面大量的习题都是要到这个网站上去做的】
