@@ -8,6 +8,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Question\2.1 数组">
+      <UniqueIdentifier>{74204368-8f31-4884-9014-af6c2f76ff6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -24,6 +27,12 @@
     </ClInclude>
     <ClInclude Include="..\Question\002_Two Sum.h">
       <Filter>Question</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\026_Remove Duplicates from Sorted Array.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\080_Remove Duplicates from Sorted Array II.h">
+      <Filter>Question\2.1 数组</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
