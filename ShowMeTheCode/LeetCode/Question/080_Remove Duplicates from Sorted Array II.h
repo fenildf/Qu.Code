@@ -52,13 +52,15 @@ public:
 
 
 // 方法二
+/*
+	这个版本的扩展性非常好，limit = 2 改为 limit = 3，就变成了允许重复最多 3 次。
+*/
 int removeDuplicates(vector<int>& nums) {
 	int i = 0;
+	int limit = 2;
 	for (int n : nums)
-		if (i < 2 || n > nums[i-2])
+		if (i < limit || n > nums[i-limit])
 			nums[i++] = n;
 	return i;
 }
 
-
-// 方法三

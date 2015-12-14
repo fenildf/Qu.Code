@@ -34,6 +34,9 @@
     <ClInclude Include="..\Question\080_Remove Duplicates from Sorted Array II.h">
       <Filter>Question\2.1 数组</Filter>
     </ClInclude>
+    <ClInclude Include="..\Question\033_Search in Rotated Sorted Array.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

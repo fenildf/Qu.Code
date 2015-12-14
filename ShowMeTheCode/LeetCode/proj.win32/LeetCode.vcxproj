@@ -80,6 +80,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Question\026_Remove Duplicates from Sorted Array.h" />
+    <ClInclude Include="..\Question\033_Search in Rotated Sorted Array.h" />
     <ClInclude Include="..\Question\080_Remove Duplicates from Sorted Array II.h" />
     <ClInclude Include="..\Question\172_Factorial Trailing Zeroes.h" />
     <ClInclude Include="..\Question\190_Reverse Bits.h" />
