@@ -28,13 +28,28 @@
     <ClInclude Include="..\Question\002_Two Sum.h">
       <Filter>Question</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\026_Remove Duplicates from Sorted Array.h">
+    <ClInclude Include="..\Question\mainEntrance.h">
+      <Filter>Question</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\004_Median of Two Sorted Arrays.h">
       <Filter>Question\2.1 数组</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\080_Remove Duplicates from Sorted Array II.h">
+    <ClInclude Include="..\Question\2.1_Array\026_Remove Duplicates from Sorted Array.h">
       <Filter>Question\2.1 数组</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\033_Search in Rotated Sorted Array.h">
+    <ClInclude Include="..\Question\2.1_Array\033_Search in Rotated Sorted Array.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\080_Remove Duplicates from Sorted Array II.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\081_Search in Rotated Sorted Array II.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\136_Single Number.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\137_Single Number II.h">
       <Filter>Question\2.1 数组</Filter>
     </ClInclude>
   </ItemGroup>
