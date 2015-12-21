@@ -52,6 +52,15 @@
     <ClInclude Include="..\Question\2.1_Array\137_Single Number II.h">
       <Filter>Question\2.1 数组</Filter>
     </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\260_Single Number III.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\70_Climbing Stairs.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\66_Plus One.h">
+      <Filter>Question\2.1 数组</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

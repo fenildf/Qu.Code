@@ -8,11 +8,13 @@
 #include "033_Search in Rotated Sorted Array.h"
 
 #include "081_Search in Rotated Sorted Array II.h"
+#include "137_Single Number II.h"
+#include "260_Single Number III.h"
 #endif
 
 
 
-#include "137_Single Number II.h"
+#include "66_Plus One.h"
 
 
 void main_Entrance()
