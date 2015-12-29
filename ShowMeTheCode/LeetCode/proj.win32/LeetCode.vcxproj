@@ -81,17 +81,20 @@
   <ItemGroup>
     <ClInclude Include="..\Question\172_Factorial Trailing Zeroes.h" />
     <ClInclude Include="..\Question\190_Reverse Bits.h" />
-    <ClInclude Include="..\Question\002_Two Sum.h" />
+    <ClInclude Include="..\Question\2.1_Array\001_Two Sum.h" />
     <ClInclude Include="..\Question\2.1_Array\004_Median of Two Sorted Arrays.h" />
     <ClInclude Include="..\Question\2.1_Array\026_Remove Duplicates from Sorted Array.h" />
+    <ClInclude Include="..\Question\2.1_Array\027_Remove Element.h" />
     <ClInclude Include="..\Question\2.1_Array\033_Search in Rotated Sorted Array.h" />
+    <ClInclude Include="..\Question\2.1_Array\066_Plus One.h" />
+    <ClInclude Include="..\Question\2.1_Array\070_Climbing Stairs.h" />
     <ClInclude Include="..\Question\2.1_Array\080_Remove Duplicates from Sorted Array II.h" />
     <ClInclude Include="..\Question\2.1_Array\081_Search in Rotated Sorted Array II.h" />
+    <ClInclude Include="..\Question\2.1_Array\089_Gray Code.h" />
+    <ClInclude Include="..\Question\2.1_Array\135_Candy.h" />
     <ClInclude Include="..\Question\2.1_Array\136_Single Number.h" />
     <ClInclude Include="..\Question\2.1_Array\137_Single Number II.h" />
     <ClInclude Include="..\Question\2.1_Array\260_Single Number III.h" />
-    <ClInclude Include="..\Question\2.1_Array\66_Plus One.h" />
-    <ClInclude Include="..\Question\2.1_Array\70_Climbing Stairs.h" />
     <ClInclude Include="..\Question\mainEntrance.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

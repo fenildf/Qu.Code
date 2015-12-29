@@ -1,7 +1,7 @@
 // AC 了的题目
 #if 0		
 
-#include "002_Two Sum.h"
+#include "001_Two Sum.h"
 #include "172_Factorial Trailing Zeroes.h"
 #include "190_Reverse Bits.h"
 #include "172_Factorial Trailing Zeroes.h"
@@ -10,11 +10,12 @@
 #include "081_Search in Rotated Sorted Array II.h"
 #include "137_Single Number II.h"
 #include "260_Single Number III.h"
+#include "066_Plus One.h"
 #endif
 
 
 
-#include "66_Plus One.h"
+#include "001_Two Sum.h"
 
 
 void main_Entrance()

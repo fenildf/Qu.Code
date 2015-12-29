@@ -44,7 +44,7 @@ public:
 
 
 
-// 方法二
+// 方法二， 就是使用了个模板
 class Solution {
 public:
 	int removeDuplicates(vector<int>& nums) {

@@ -11,6 +11,18 @@
     <Filter Include="Question\2.1 数组">
       <UniqueIdentifier>{74204368-8f31-4884-9014-af6c2f76ff6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Question\2.1 数组\0-秒过">
+      <UniqueIdentifier>{c92449c3-baa1-4898-918e-f94f7a383cd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Question\2.1 数组\1-需要想1下">
+      <UniqueIdentifier>{0de5fbeb-01da-4b62-9336-dbfb7850ee5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Question\2.1 数组\2-需要想2下">
+      <UniqueIdentifier>{95520ff0-3869-41ac-911a-fe3f6822f850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Question\2.1 数组\3-想不出来">
+      <UniqueIdentifier>{129662ba-ffb2-47e1-9fcf-a25a5100716b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -25,41 +37,50 @@
     <ClInclude Include="..\Question\190_Reverse Bits.h">
       <Filter>Question</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\002_Two Sum.h">
-      <Filter>Question</Filter>
-    </ClInclude>
     <ClInclude Include="..\Question\mainEntrance.h">
       <Filter>Question</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\2.1_Array\004_Median of Two Sorted Arrays.h">
-      <Filter>Question\2.1 数组</Filter>
+    <ClInclude Include="..\Question\2.1_Array\001_Two Sum.h">
+      <Filter>Question\2.1 数组\0-秒过</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\027_Remove Element.h">
+      <Filter>Question\2.1 数组\0-秒过</Filter>
     </ClInclude>
     <ClInclude Include="..\Question\2.1_Array\026_Remove Duplicates from Sorted Array.h">
-      <Filter>Question\2.1 数组</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Question\2.1_Array\033_Search in Rotated Sorted Array.h">
-      <Filter>Question\2.1 数组</Filter>
+      <Filter>Question\2.1 数组\0-秒过</Filter>
     </ClInclude>
     <ClInclude Include="..\Question\2.1_Array\080_Remove Duplicates from Sorted Array II.h">
-      <Filter>Question\2.1 数组</Filter>
+      <Filter>Question\2.1 数组\1-需要想1下</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\2.1_Array\081_Search in Rotated Sorted Array II.h">
-      <Filter>Question\2.1 数组</Filter>
+    <ClInclude Include="..\Question\2.1_Array\070_Climbing Stairs.h">
+      <Filter>Question\2.1 数组\0-秒过</Filter>
     </ClInclude>
     <ClInclude Include="..\Question\2.1_Array\136_Single Number.h">
-      <Filter>Question\2.1 数组</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Question\2.1_Array\137_Single Number II.h">
-      <Filter>Question\2.1 数组</Filter>
+      <Filter>Question\2.1 数组\0-秒过</Filter>
     </ClInclude>
     <ClInclude Include="..\Question\2.1_Array\260_Single Number III.h">
-      <Filter>Question\2.1 数组</Filter>
+      <Filter>Question\2.1 数组\0-秒过</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\2.1_Array\70_Climbing Stairs.h">
-      <Filter>Question\2.1 数组</Filter>
+    <ClInclude Include="..\Question\2.1_Array\137_Single Number II.h">
+      <Filter>Question\2.1 数组\1-需要想1下</Filter>
     </ClInclude>
-    <ClInclude Include="..\Question\2.1_Array\66_Plus One.h">
-      <Filter>Question\2.1 数组</Filter>
+    <ClInclude Include="..\Question\2.1_Array\004_Median of Two Sorted Arrays.h">
+      <Filter>Question\2.1 数组\3-想不出来</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\066_Plus One.h">
+      <Filter>Question\2.1 数组\2-需要想2下</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\033_Search in Rotated Sorted Array.h">
+      <Filter>Question\2.1 数组\2-需要想2下</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\081_Search in Rotated Sorted Array II.h">
+      <Filter>Question\2.1 数组\2-需要想2下</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\089_Gray Code.h">
+      <Filter>Question\2.1 数组\0-秒过</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Question\2.1_Array\135_Candy.h">
+      <Filter>Question\2.1 数组\1-需要想1下</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
