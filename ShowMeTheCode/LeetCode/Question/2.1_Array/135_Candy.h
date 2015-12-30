@@ -66,13 +66,13 @@ public:
 
 // 方法2，从左右扫描2遍，看了 别人的解题策略。
 /*
-	时间复杂度 O(2n)
+	时间复杂度 O(2n)，但是 逻辑超级简单。
 */
 class Solution {
 public:
 	int candy(vector<int>& ratings) {
 		const int n = ratings.size();
-		vector<int> sum(n,1);
+		vector<int> sum(n,1);						// 给所有人分了1个蛋糕。
 
 		for (int i = 1; i < n; ++i) {
 			if (ratings[i] > ratings[i-1]) {
