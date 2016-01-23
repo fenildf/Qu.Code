@@ -6,6 +6,5 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 	main_Entrance();
-
 	return 0;
 }
